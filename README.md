@@ -36,5 +36,5 @@ A CapyDev é uma equipe de desenvolvedores criada em 2024 por um grupo de estuda
 | Felipe Ribeiro | Product Owner | <a href="https://github.com/feliperib286"><img src="https://skillicons.dev/icons?i=github"></a> |
 | Felipe Adriano | Desenvolvedor | <a href="https://github.com/Felipe-ACG"><img src="https://skillicons.dev/icons?i=github"></a> |
 | Gabriel Frois | Desenvolvedor | <a href="https://github.com/GabrielFrois"><img src="https://skillicons.dev/icons?i=github"></a> |
-| Gabriel Camargo | Desenvolvedor | <a href="https://github.com/gabecamargo"><img src="https://skillicons.dev/icons?i=github"></a> |
+| Gabriel Camargo | Desenvolvedor | <a href="https://github.com/AllanDreemur"><img src="https://skillicons.dev/icons?i=github"></a> |
 | João Victor | Desenvolvedor | <a href="https://github.com/joaoestreano"><img src="https://skillicons.dev/icons?i=github"></a> |
