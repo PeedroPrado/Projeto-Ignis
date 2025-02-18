@@ -32,7 +32,7 @@ A CapyDev é uma equipe de desenvolvedores criada em 2024 por um grupo de estuda
 
 | Nome | Cargo | Midia Social |
 | ---- | ----- | ------------ |
-| Pedro Prado | Scrum Master | <a href="https://github.com/PradoPedro1917"><img src="https://skillicons.dev/icons?i=github"></a> |
+| Pedro Prado | Scrum Master | <a href="https://github.com/PeedroPrado"><img src="https://skillicons.dev/icons?i=github"></a> |
 | Felipe Ribeiro | Product Owner | <a href="https://github.com/feliperib286"><img src="https://skillicons.dev/icons?i=github"></a> |
 | Felipe Adriano | Desenvolvedor | <a href="https://github.com/Felipe-ACG"><img src="https://skillicons.dev/icons?i=github"></a> |
 | Gabriel Frois | Desenvolvedor | <a href="https://github.com/GabrielFrois"><img src="https://skillicons.dev/icons?i=github"></a> |
