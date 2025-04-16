@@ -1,7 +1,7 @@
-export class FocoQ {
+export class Area_Queimada {
     id: number;
     data: Date;
-    geometria: any; // geometry(polygon, 4326)
+    geometria: any; // geometry(point, 4326)
     estado_id: number;
     bioma_id: number;
     frp: number;
