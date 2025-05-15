@@ -18,7 +18,7 @@ Com o IGNIS, gestores ambientais, pesquisadores, bombeiros e a população em ge
 | Sprints | Início | Fim | Relatório |
 | ------- | ------ | --- | --------- |
 | 1ª sprint | 24/03/2025 | 17/04/2025 | <a href="https://github.com/Capydev-jac/Projeto-Ignis/tree/1-sprint">Ver</a>
-| 2ª sprint | 22/04/2025 | 15/05/2025 |
+| 2ª sprint | 22/04/2025 | 15/05/2025 | <a href="https://github.com/Capydev-jac/Projeto-Ignis/tree/2-sprint">Ver</a>
 | 3ª sprint | 16/05/2025 | 10/06/2025 |
 
 <h2>Product Backlog</h2>
@@ -41,8 +41,16 @@ Com o IGNIS, gestores ambientais, pesquisadores, bombeiros e a população em ge
 
 <h2>Diagramas UML</h2>
 
+<h3 align="center">Diagrama caso de uso</h3>
+
 <p align="center">
-   <img src="https://github.com/Capydev-jac/Projeto-Ignis/blob/main/images/Diagrama_caso_de_uso.png"
+   <img src="https://github.com/Capydev-jac/Projeto-Ignis/blob/main/images/Diagrama_caso_de_uso.png">
+</p>
+
+<h3 align="center">Diagrama de classe</h3>
+
+<p align="center">
+   <img src="https://github.com/Capydev-jac/Projeto-Ignis/blob/main/images/diagrama_de_classe.jpg">
 </p>
 
 <h2>Ferramentas Utilizadas</h2>
