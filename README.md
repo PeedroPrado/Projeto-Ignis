@@ -59,7 +59,6 @@ Com o IGNIS, gestores ambientais, pesquisadores, bombeiros e a população em ge
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg", width="40", heigth="40"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/trello/trello-plain.svg", width="40", heigth="40"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg", width="40", heigth="40"/>
-  <img src="https://github.com/Capydev-jac/Capydev/blob/main/docs/images/dbdesignerlogo.png", width="40", heigth="40">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain-wordmark.svg", width="40", heigth="40"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain-wordmark.svg", width="40", heigth="40"/>
   <img src="https://github.com/Capydev-jac/Capydev/blob/main/docs/images/typescript_logo.png", width="40", heigth="40">
