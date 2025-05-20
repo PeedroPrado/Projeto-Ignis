@@ -1,17 +1,12 @@
-// Versão final de FiltroMapa com props transitórias e toggles funcionais
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate, useLocation } from "react-router-dom";
+import { FiltrosMapa } from '../types/Filtros';
 
 interface FiltroMapaProps {
-  onFiltrar: (filtros: {
-    tipo: string;
-    estado: string;
-    bioma: string;
-    inicio: string;
-    fim: string;
-  }) => void;
+  onFiltrar: (filtros: FiltrosMapa) => void;
 }
+
 
 const SliderToggle = ({ label, active, onClick, color }: { label: string; active: boolean; onClick: () => void; color: string }) => (
   <ToggleWrapper>
@@ -43,9 +38,16 @@ const FiltroMapa: React.FC<FiltroMapaProps> = ({ onFiltrar }) => {
     const rota = tipo ? `/${tipo}` : '/';
     navigate(rota);
     setTimeout(() => {
-      onFiltrar({ tipo, estado: estado !== '' ? estado.toString() : '', bioma: bioma !== '' ? bioma.toString() : '', inicio, fim });
+      onFiltrar({
+        tipo: tipo as FiltrosMapa['tipo'],
+        estado: estado !== '' ? estado.toString() : '',
+        bioma: bioma !== '' ? bioma.toString() : '',
+        inicio,
+        fim
+      });
     }, 100);
   };
+
 
   const limparFiltro = () => {
     navigate("/");
@@ -119,7 +121,7 @@ const FiltroMapa: React.FC<FiltroMapaProps> = ({ onFiltrar }) => {
         </Datas>
 
         <AplicarButton onClick={aplicarFiltro}>Aplicar</AplicarButton>
-        
+
         <LimparButton onClick={limparFiltro}>Limpar</LimparButton>
 
       </Filtros>

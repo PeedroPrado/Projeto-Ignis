@@ -1,5 +1,3 @@
-// App.tsx
-
 import React, { useState, Suspense } from 'react';
 import { useLocation } from 'react-router-dom';
 import Header from './components/Header';
@@ -9,15 +7,23 @@ import FiltroGrafico from './components/FiltroGrafico';
 import MapaVazio from './components/MapaVazio';
 import MeusGraficos from './components/Grafico';
 import styled from 'styled-components';
+import { FiltrosMapa } from './types/Filtros';
 
-// Lazy loading do Mapa
 const Mapa = React.lazy(() => import('./components/Mapa'));
 
 const App: React.FC = () => {
   const [ativo, setAtivo] = useState('mapa');
   const location = useLocation();
 
-  const [filtros, setFiltros] = useState({
+  const [filtrosMapa, setFiltrosMapa] = useState<FiltrosMapa>({
+    tipo: 'risco',
+    estado: '',
+    bioma: '',
+    inicio: '2025-03-20',
+    fim: '2025-03-27'
+  });
+
+  const [filtrosGrafico, setFiltrosGrafico] = useState({
     tipo: 'Focos',
     local: 'Estados',
     inicio: '2025-03-20',
@@ -35,25 +41,25 @@ const App: React.FC = () => {
         <ContentContainer>
           <Abas onClick={handleClick} ativo={ativo} />
           {ativo === 'mapa' ? (
-            <FiltroMapa onFiltrar={setFiltros} />
+            <FiltroMapa onFiltrar={setFiltrosMapa} />
           ) : (
-            <FiltroGrafico onAplicar={setFiltros} />
+            <FiltroGrafico onAplicar={setFiltrosGrafico} />
           )}
         </ContentContainer>
 
         <Suspense fallback={<div style={{ padding: '2rem' }}>Carregando...</div>}>
           {ativo === 'mapa' ? (
             location.pathname === '/risco' ? (
-              <Mapa tipo="risco" />
+              <Mapa tipo="risco" filtros={filtrosMapa} />
             ) : location.pathname === '/foco_calor' ? (
-              <Mapa tipo="foco_calor" />
+              <Mapa tipo="foco_calor" filtros={filtrosMapa} />
             ) : location.pathname === '/area_queimada' ? (
-              <Mapa tipo="area_queimada" />
+              <Mapa tipo="area_queimada" filtros={filtrosMapa} />
             ) : (
               <MapaVazio />
             )
           ) : (
-            <MeusGraficos filtros={filtros} />
+            <MeusGraficos filtros={filtrosGrafico} />
           )}
         </Suspense>
       </MainContent>

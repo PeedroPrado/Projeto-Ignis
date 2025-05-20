@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { FiltrosGrafico } from '../types/Filtros';
 
 interface FiltroGraficoProps {
   onAplicar: (filtros: { tipo: string; local: string; inicio: string; fim: string }) => void;
@@ -16,8 +17,8 @@ const FiltroGrafico: React.FC<FiltroGraficoProps> = ({ onAplicar }) => {
 
   const aplicarFiltro = () => {
     onAplicar({
-      tipo: tipos[index1],
-      local: locais[index2],
+      tipo: tipos[index1] as FiltrosGrafico['tipo'],
+      local: locais[index2] as FiltrosGrafico['local'],
       inicio,
       fim,
     });

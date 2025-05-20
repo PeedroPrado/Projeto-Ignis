@@ -1,52 +1,39 @@
-// Estrutura base otimizada para Mapa.tsx com foco em performance e redução de INP
 import React, { useEffect, useState, useTransition } from 'react';
 import styled from 'styled-components';
-import dynamic from 'next/dynamic';
+import { FiltrosMapa } from '../types/Filtros';
+import { BaseDado } from '../types/BaseDado';
 
-// Importa dinamicamente o componente de mapa com suspense
 const MapComponent = React.lazy(() => import('./MapComponent'));
 const FiltroMapa = React.lazy(() => import('./FiltroMapa'));
 
-interface Ocorrencia {
-  latitude: number;
-  longitude: number;
-  estado: string;
-  bioma: string;
-  risco_fogo: number;
-  data: string;
-  dia_sem_chuva?: string;
-  precipitacao?: number;
-  frp?: number;
-}
-
-interface Filtros {
-  tipo: string;
-  estado: string;
-  bioma: string;
-  inicio: string;
-  fim: string;
-}
-
 interface MapaProps {
   tipo: string;
+  filtros: FiltrosMapa;
 }
 
 const Mapa: React.FC<MapaProps> = ({ tipo }) => {
-  const [dados, setDados] = useState<Ocorrencia[]>([]);
-  const [filtros, setFiltros] = useState<Filtros>({ tipo, estado: '', bioma: '', inicio: '', fim: '' });
-  const [isPending, startTransition] = useTransition();
+  const [dados, setDados] = useState<BaseDado[]>([]);
+  const [filtros, setFiltros] = useState<FiltrosMapa>({
+    tipo: tipo as FiltrosMapa['tipo'],
+    estado: '',
+    bioma: '',
+    inicio: '',
+    fim: ''
+  });
 
-  const montarQueryParams = () => {
-    const params = new URLSearchParams();
-    if (filtros.tipo) params.append('tipo', filtros.tipo);
-    if (filtros.estado) params.append('estado', filtros.estado);
-    if (filtros.bioma) params.append('bioma', filtros.bioma);
-    if (filtros.inicio) params.append('inicio', filtros.inicio);
-    if (filtros.fim) params.append('fim', filtros.fim);
-    return params.toString();
-  };
+  const [, startTransition] = useTransition(); // isPending não é usado
 
   useEffect(() => {
+    const montarQueryParams = () => {
+      const params = new URLSearchParams();
+      if (filtros.tipo) params.append('tipo', filtros.tipo);
+      if (filtros.estado) params.append('estado', filtros.estado);
+      if (filtros.bioma) params.append('bioma', filtros.bioma);
+      if (filtros.inicio) params.append('inicio', filtros.inicio);
+      if (filtros.fim) params.append('fim', filtros.fim);
+      return params.toString();
+    };
+
     const fetchData = async () => {
       const query = montarQueryParams();
       const url =

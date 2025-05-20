@@ -1,3 +1,4 @@
+import { BaseDado } from '../types/BaseDado';
 // Versão com clusterização de marcadores usando react-leaflet-markercluster
 import React, { useEffect, useMemo, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
